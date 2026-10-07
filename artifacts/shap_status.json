@@ -1,0 +1,4 @@
+{
+  "available": false,
+  "message": "Numba needs NumPy 2.3 or less. Got NumPy 2.5."
+}

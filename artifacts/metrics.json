@@ -1,0 +1,54 @@
+{
+  "accuracy": 0.8065,
+  "balanced_accuracy": 0.7477,
+  "failure_precision": 0.8571,
+  "failure_recall": 0.5455,
+  "failure_f1": 0.6667,
+  "roc_auc": 0.7682,
+  "brier_score": 0.1548,
+  "selected_model": "Random Forest",
+  "threshold": 0.5,
+  "threshold_selection": "Fixed 0.50 probability cutoff; not tuned on the held-out test set.",
+  "dataset_rows": 121,
+  "test_rows": 31,
+  "failure_rate": 0.3388,
+  "always_success_test_accuracy": 0.6452,
+  "confusion_matrix_labels": [
+    "recovered",
+    "not_recovered"
+  ],
+  "confusion_matrix": [
+    [
+      19,
+      1
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "calibration_bins": [
+    {
+      "mean_predicted_probability": 0.0848,
+      "observed_failure_rate": 0.1429
+    },
+    {
+      "mean_predicted_probability": 0.1386,
+      "observed_failure_rate": 0.3333
+    },
+    {
+      "mean_predicted_probability": 0.2358,
+      "observed_failure_rate": 0.1667
+    },
+    {
+      "mean_predicted_probability": 0.4438,
+      "observed_failure_rate": 0.1667
+    },
+    {
+      "mean_predicted_probability": 0.8452,
+      "observed_failure_rate": 1.0
+    }
+  ],
+  "split_method": "Stratified random 75/25 holdout; models compared by 5-fold stratified CV on training rows. This small dataset is not sufficient for a strong future-launch generalization claim.",
+  "data_note": "Falcon 9 first-stage landing/recovery classification. Reanalysis weather is sampled at the launch site one hour before launch. Reuse fields are proxies; no engine telemetry is public in this dataset."
+}

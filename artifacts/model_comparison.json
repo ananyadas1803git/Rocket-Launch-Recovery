@@ -1,0 +1,62 @@
+[
+  {
+    "model": "Logistic Regression",
+    "cross_validation": {
+      "roc_auc_mean": 0.8222,
+      "accuracy_mean": 0.7444,
+      "balanced_accuracy_mean": 0.7083,
+      "roc_auc_std": 0.0508,
+      "accuracy_std": 0.0444,
+      "balanced_accuracy_std": 0.0527
+    },
+    "test": {
+      "accuracy": 0.8065,
+      "balanced_accuracy": 0.7682,
+      "failure_precision": 0.7778,
+      "failure_recall": 0.6364,
+      "failure_f1": 0.7,
+      "roc_auc": 0.8045,
+      "brier_score": 0.1595
+    }
+  },
+  {
+    "model": "Random Forest",
+    "cross_validation": {
+      "roc_auc_mean": 0.85,
+      "accuracy_mean": 0.8333,
+      "balanced_accuracy_mean": 0.7833,
+      "roc_auc_std": 0.05,
+      "accuracy_std": 0.0609,
+      "balanced_accuracy_std": 0.0808
+    },
+    "test": {
+      "accuracy": 0.7742,
+      "balanced_accuracy": 0.7432,
+      "failure_precision": 0.7,
+      "failure_recall": 0.6364,
+      "failure_f1": 0.6667,
+      "roc_auc": 0.7864,
+      "brier_score": 0.1588
+    }
+  },
+  {
+    "model": "XGBoost",
+    "cross_validation": {
+      "roc_auc_mean": 0.8278,
+      "accuracy_mean": 0.8222,
+      "balanced_accuracy_mean": 0.775,
+      "roc_auc_std": 0.0408,
+      "accuracy_std": 0.0416,
+      "balanced_accuracy_std": 0.0624
+    },
+    "test": {
+      "accuracy": 0.8387,
+      "balanced_accuracy": 0.7932,
+      "failure_precision": 0.875,
+      "failure_recall": 0.6364,
+      "failure_f1": 0.7368,
+      "roc_auc": 0.7864,
+      "brier_score": 0.1577
+    }
+  }
+]

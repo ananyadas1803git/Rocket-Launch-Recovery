@@ -1,0 +1,96 @@
+{
+  "dataset_type": "spacex_landing",
+  "source_file": "spacex_falcon9_training.csv",
+  "source_url": "https://github.com/Roderic19/IBM-Applied-Data-Science-Capstone/blob/main/spacex_web_scraped.csv",
+  "weather_source_url": "https://open-meteo.com/en/docs/historical-weather-api",
+  "features": [
+    "payload_mass_kg",
+    "launch_site",
+    "orbit",
+    "booster_category",
+    "booster_prior_flights",
+    "booster_reused",
+    "flight_number",
+    "launch_month",
+    "launch_hour_utc",
+    "air_temp_c_tminus_1h",
+    "humidity_pct_tminus_1h",
+    "wind_speed_m_s_tminus_1h",
+    "wind_gust_m_s_tminus_1h",
+    "precipitation_mm_tminus_1h",
+    "pressure_hpa_tminus_1h",
+    "cloud_cover_pct_tminus_1h"
+  ],
+  "numeric_features": [
+    "payload_mass_kg",
+    "booster_prior_flights",
+    "booster_reused",
+    "flight_number",
+    "launch_month",
+    "launch_hour_utc",
+    "air_temp_c_tminus_1h",
+    "humidity_pct_tminus_1h",
+    "wind_speed_m_s_tminus_1h",
+    "wind_gust_m_s_tminus_1h",
+    "precipitation_mm_tminus_1h",
+    "pressure_hpa_tminus_1h",
+    "cloud_cover_pct_tminus_1h"
+  ],
+  "categorical_features": [
+    "launch_site",
+    "orbit",
+    "booster_category"
+  ],
+  "categories": {
+    "launch_site": [
+      "CCAFS",
+      "CCSFS",
+      "Cape Canaveral",
+      "KSC",
+      "VAFB"
+    ],
+    "orbit": [
+      "GTO",
+      "HEO",
+      "LEO",
+      "MEO",
+      "Polar",
+      "Polar orbit",
+      "SSO",
+      "Sub-orbital"
+    ],
+    "booster_category": [
+      "B4",
+      "B5",
+      "FT",
+      "v1.0",
+      "v1.1"
+    ]
+  },
+  "numeric_defaults": {
+    "payload_mass_kg": 5000.0,
+    "booster_prior_flights": 1.0,
+    "booster_reused": 0.0,
+    "flight_number": 61.0,
+    "launch_month": 6.0,
+    "launch_hour_utc": 14.0,
+    "air_temp_c_tminus_1h": 22.9,
+    "humidity_pct_tminus_1h": 76.0,
+    "wind_speed_m_s_tminus_1h": 3.94,
+    "wind_gust_m_s_tminus_1h": 6.7,
+    "precipitation_mm_tminus_1h": 0.0,
+    "pressure_hpa_tminus_1h": 1017.5,
+    "cloud_cover_pct_tminus_1h": 58.0
+  },
+  "target": "First-stage recovery success (landing and recovery recorded as Success)",
+  "target_counts": {
+    "success": 80,
+    "failure": 41
+  },
+  "years": [
+    2010,
+    2021
+  ],
+  "engine_proxy_note": "Booster block, reuse marker, and previously flown count are public condition proxies, not engine telemetry.",
+  "weather_note": "ERA5 hourly reanalysis sampled at the launch site at the previous full UTC hour; this is historical reconstructed weather, not a launch forecast."
+}

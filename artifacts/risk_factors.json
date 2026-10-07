@@ -1,0 +1,46 @@
+[
+  {
+    "feature": "engine_health_score",
+    "importance": 0.07598
+  },
+  {
+    "feature": "vibration_mm_s",
+    "importance": 0.05593
+  },
+  {
+    "feature": "engine_temp_c",
+    "importance": 0.03122
+  },
+  {
+    "feature": "rocket_family",
+    "importance": 0.02622
+  },
+  {
+    "feature": "wind_speed_m_s",
+    "importance": 0.02599
+  },
+  {
+    "feature": "launch_site",
+    "importance": 0.02273
+  },
+  {
+    "feature": "precipitation_mm",
+    "importance": 0.01611
+  },
+  {
+    "feature": "chamber_pressure_mpa",
+    "importance": 0.015
+  },
+  {
+    "feature": "air_temp_c",
+    "importance": 0.01241
+  },
+  {
+    "feature": "humidity_pct",
+    "importance": 0.0036
+  },
+  {
+    "feature": "payload_mass_kg",
+    "importance": -0.00581
+  }
+]
