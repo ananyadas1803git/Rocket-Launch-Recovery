@@ -160,11 +160,11 @@ st.caption(
 )
 
 try:
-    configured_api_key = st.secrets.get("OPENAI_API_KEY", "")
+    configured_api_key = st.secrets.get("GEMINI_API_KEY", "")
 except Exception:
     configured_api_key = ""
-api_key = configured_api_key or os.getenv("OPENAI_API_KEY", "")
-generation_model = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+api_key = configured_api_key or os.getenv("GEMINI_API_KEY", "")
+generation_model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 if "rag_messages" not in st.session_state:
     st.session_state["rag_messages"] = []
@@ -194,7 +194,7 @@ if ask_question and question.strip():
     if not chunks:
         answer = "I couldn't find relevant information for that question in the project notes. Try asking about the prediction target, launch features, weather data, reuse proxy, or model evaluation."
     elif not api_key:
-        answer = "I found relevant project notes, but generated answers are not enabled yet. Set `OPENAI_API_KEY` in your environment or Streamlit secrets to enable the cited Q&A assistant. The retrieved source notes are listed below."
+        answer = "I found relevant project notes, but generated answers are not enabled yet. Set `GEMINI_API_KEY` in your environment or Streamlit secrets to enable the cited Q&A assistant. The retrieved source notes are listed below."
     else:
         try:
             answer = generate_answer(

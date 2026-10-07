@@ -46,11 +46,11 @@ docker run --rm -p 8501:8501 launch-risk-lab
 
 Open `http://localhost:8501`. The container trains from the checked-in prepared SpaceX dataset. For Streamlit Community Cloud, set `app.py` as the main file and install dependencies from `requirements.txt`.
 
-The prediction page also includes a RAG assistant that retrieves relevant project notes from `docs/rag_knowledge_base.md` using TF-IDF, then generates a concise answer with citations. It uses the OpenAI Responses API only for answer generation; retrieved context and the current prediction do not alter classifier inputs or scores. Set `OPENAI_API_KEY` as an environment variable locally, or add it to the app's Streamlit secrets when deployed. `OPENAI_MODEL` optionally selects a different Responses API model; it defaults to `gpt-5-mini`. Without an API key, the app still retrieves the relevant notes and explains how to enable generated answers.
+The prediction page also includes a RAG assistant that retrieves relevant project notes from `docs/rag_knowledge_base.md` using TF-IDF, then generates a concise answer with citations. It uses Google's Gemini Interactions API only for answer generation; retrieved context and the current prediction do not alter classifier inputs or scores. Set `GEMINI_API_KEY` as an environment variable locally, or add it to the app's Streamlit secrets when deployed. `GEMINI_MODEL` optionally selects a different Gemini model; it defaults to `gemini-3.8-flash`. Without an API key, the app still retrieves the relevant notes and explains how to enable generated answers.
 
 ```toml
 # Streamlit app secrets (do not commit this file)
-OPENAI_API_KEY = "your-api-key"
+GEMINI_API_KEY = "your-gemini-api-key"
 ```
 
 ## Project layout

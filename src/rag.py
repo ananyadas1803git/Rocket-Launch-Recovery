@@ -71,7 +71,7 @@ def generate_answer(
     prediction_context: str | None = None,
 ) -> str:
     """Generate an answer using only retrieved project notes and app context."""
-    from openai import OpenAI
+    from google import genai
 
     source_context = "\n\n".join(
         f"[{index}] {chunk.title}\n{chunk.text}"
@@ -80,9 +80,9 @@ def generate_answer(
     if prediction_context:
         source_context += f"\n\n[P] Current prediction from the app (user input and classifier output):\n{prediction_context}"
 
-    response = OpenAI(api_key=api_key).responses.create(
+    interaction = genai.Client(api_key=api_key).interactions.create(
         model=model,
-        instructions=(
+        system_instruction=(
             "You answer questions about the Rocket Launch Classifier project. "
             "Use only the supplied project notes and current prediction context. "
             "If the notes do not contain the answer, say you cannot establish it from "
@@ -92,7 +92,6 @@ def generate_answer(
             "Never present model behavior as physical causation or a launch recommendation."
         ),
         input=f"Project notes:\n{source_context or '(No relevant project notes were retrieved.)'}\n\nQuestion: {question}",
-        max_output_tokens=350,
         store=False,
     )
-    return response.output_text.strip()
+    return (interaction.output_text or "").strip()
