@@ -1,4 +1,4 @@
-# Rocket Launch Recovery App
+# Rocket Recovery Predictor
 
 An end-to-end predictive engineering project comparing Logistic Regression, Random Forest, and XGBoost for the probability that a Falcon 9 first-stage booster is **not recovered successfully**. It includes launch and payload data, archived weather, booster reuse proxies, model comparison, probability calibration, SHAP explainability, a Streamlit prediction page, and a documentation-grounded RAG assistant.
 
