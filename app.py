@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 from pathlib import Path
 
@@ -205,6 +206,7 @@ if ask_question and question.strip():
                 prediction_context=prediction_context,
             )
         except Exception as exc:
+            logging.exception("Gemini answer generation failed")
             answer = f"I couldn't generate an answer right now ({exc.__class__.__name__}). The retrieved project sources are listed below."
     if prediction_context and "[P]" in answer:
         sources.append({"label": "[P] Current prediction shown in the app", "url": None})
