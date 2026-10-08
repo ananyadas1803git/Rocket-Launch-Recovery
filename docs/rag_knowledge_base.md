@@ -1,4 +1,4 @@
-# Rocket Launch Classifier knowledge base
+# Rocket Recovery Predictor knowledge base
 
 ## Prediction target
 The classifier estimates the probability that a Falcon 9 first-stage booster was not successfully recovered. The positive class is non-recovery; a recorded landing outcome of `Success` is a successful recovery. This is not the same as whether the payload reached orbit or whether the overall mission succeeded. The data contains 121 launches from 2010 through 2021, so results are uncertain and should not be treated as launch guidance.

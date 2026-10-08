@@ -84,7 +84,7 @@ def generate_answer(
     interaction = client.interactions.create(
         model=model,
         system_instruction=(
-            "You answer questions about the Rocket Launch Classifier project. "
+            "You answer questions about the Rocket Recovery Predictor project. "
             "Use only the supplied project notes and current prediction context. "
             "If the notes do not contain the answer, say you cannot establish it from "
             "the available project sources. Do not invent technical or safety claims. "

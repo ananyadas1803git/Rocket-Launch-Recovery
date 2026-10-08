@@ -15,7 +15,7 @@ from src.data import FEATURE_COLUMNS
 from src.rag import generate_answer, retrieve
 from src.train import ARTIFACTS, train
 
-st.set_page_config(page_title="Rocket Launch Classifier", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Rocket Recovery Predictor", page_icon="🚀", layout="wide")
 ROOT = Path(__file__).resolve().parent
 MODEL_PATH = ARTIFACTS / "launch_risk_model.joblib"
 
@@ -38,7 +38,7 @@ metrics = load_json(ARTIFACTS / "metrics.json")
 historical_mode = metadata.get("dataset_type") == "historical_missions"
 landing_mode = metadata.get("dataset_type") == "spacex_landing"
 if landing_mode:
-    st.title("🚀 Rocket Launch Classifier")
+    st.title("🚀 Rocket Recovery Predictor")
     st.caption("A predictive engineering project for first-stage booster recovery outcomes.")
     st.warning(
         "This small public dataset predicts whether a Falcon 9 first stage was recovered. "
@@ -46,7 +46,7 @@ if landing_mode:
         "It contains no engine telemetry and is not a launch safety tool."
     )
 elif historical_mode:
-    st.title("🚀 Rocket Launch Classifier")
+    st.title("🚀 Rocket Recovery Predictor")
     st.caption("A predictive engineering demo for exploring historical mission outcomes.")
     st.warning(
         "This model is trained on historical mission outcomes through 2020. The source has "
@@ -55,7 +55,7 @@ elif historical_mode:
         + "Treat it as a retrospective learning demo, not launch guidance."
     )
 else:
-    st.title("🚀 Rocket Launch Classifier")
+    st.title("🚀 Rocket Recovery Predictor")
     st.caption("A predictive engineering demo for exploring launch outcome risk factors.")
     st.warning(
         "The bundled fallback training data is synthetic and for education only. Predictions "
