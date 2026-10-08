@@ -80,7 +80,8 @@ def generate_answer(
     if prediction_context:
         source_context += f"\n\n[P] Current prediction from the app (user input and classifier output):\n{prediction_context}"
 
-    interaction = genai.Client(api_key=api_key).interactions.create(
+    client = genai.Client(api_key=api_key)
+    interaction = client.interactions.create(
         model=model,
         system_instruction=(
             "You answer questions about the Rocket Launch Classifier project. "
